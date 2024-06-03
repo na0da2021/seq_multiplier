@@ -5,11 +5,9 @@ module counter(clk, aclr_n, count_out);
 	output[1:0] count_out;  
 	 
 	t_ff t1 (.clk(clk), .t(1), .reset(aclr_n), .q(count_out[0]));
-   t_ff t2 (.clk(!count_out[0]), .t(1), .reset(aclr_n), .q(count_out[1]));
+    t_ff t2 (.clk(!count_out[0]), .t(1), .reset(aclr_n), .q(count_out[1]));
 
 endmodule
-
-
 
 module t_ff (
  input clk, t, reset,
@@ -25,28 +23,4 @@ begin
    else
      q<= q;
 end
-endmodule
-
-
-
-
-module tb(); 
- 
-	reg clk; 
-	reg aclr_n; 
-	wire [1:0] count_out; 
-	 
-	counter counter1 (.clk(clk), .aclr_n(aclr_n), .count_out(count_out)); 
-	 
-	initial 
-	begin 
-		$monitor("count_out = %b \n", count_out); 
-		clk = 0;
-		aclr_n = 0; 
-		#20; 
-		aclr_n = 1;  
-	end 
-	 
-always #5 clk = ~ clk; 
-initial #500 $finish;  
 endmodule
