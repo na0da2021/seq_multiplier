@@ -1,9 +1,19 @@
 # Sequential Multiplier Module
 
-## Overview
-This module performs sequential multiplication of two 8-bit inputs, `dataa` and `datab`. The multiplication process is controlled by a start signal and is synchronous with the provided clock signal. The result is a 16-bit product, and the module also outputs a 7-segment display control.
+## Table of Contents
+- Overview
+- Top-Module Interface
+- Internal Signals
+- Submodules
+- Installation
+- Simulation
+- Contributing
+- Notes
 
-## Module Interface
+## Overview
+This verilog implementaion describes a sequential multiplication of two 8-bit inputs, `dataa` and `datab`. The multiplication process is controlled by a start signal and is synchronous with the provided clock signal. The result is a 16-bit product, and the module also outputs a 7-segment display control.
+
+## Top-Module Interface `seq_mult`
 
 ```verilog
 module seq_mult(
@@ -39,28 +49,19 @@ module seq_mult(
 - `register reg1`: Stores the accumulated product and outputs it as `product8x8_out`.
 - `seven_seg seg1`: Drives the 7-segment display based on the state_out signal.
 
-## Testbench
+## Installation
+1. Clone this repository to your local machine:
 
-The testbench `tb` initializes the inputs, toggles the clock, and simulates the module's behavior.
+   git clone https://github.com/na0da2021/seq_multiplier.git
 
-## Usage
+2. Navigate to the cloned directory and explore the Verilog source files.
 
-To utilize the `seq_mult` module in your Verilog projects, follow these steps:
+## Simulation
+1. Run the provided testbench `tb` using your preferred Verilog simulation tool (e.g., ModelSim).
+2. Observe the simulation results, which demonstrate the correctness of the sequential multiplier.
 
-1. **Instantiate the Module:**
-   Include the `seq_mult` module in your design file and instantiate it as per your project requirements.
-
-2. **Connect the Inputs and Outputs:**
-   Map the `dataa`, `datab`, `start`, `reset_a`, and `clk` inputs to the appropriate signals in your design. Also, connect the `done_flag`, `product8x8_out`, and `seven_seg` outputs to the respective destination signals.
-
-3. **Reset the Module:**
-   Before starting the multiplication, assert the `reset_a` signal to reset the module and ensure it is in a known state.
-
-4. **Monitor the Output:**
-   The `done_flag` signal will indicate the completion of the multiplication process. Once done, the `product8x8_out` will hold the final product of the multiplication.
-
-5. **Display Interface:**
-   The `seven_seg` output can be connected to a 7-segment display to visualize the state of the module or other relevant information.
+## Contributing
+Contributions to enhance the multiplier or extend its functionality are welcome. Fork the repository, make your changes, and submit a pull request for review.
 
 ## Notes
 1. Assert the reset_a signal before starting the multiplication to reset the module.
