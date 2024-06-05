@@ -9,6 +9,7 @@
 - Simulation
 - Contributing
 - Notes
+- Acknowledgments
 
 ## Overview
 This verilog implementaion describes a sequential multiplication of two 8-bit inputs, `dataa` and `datab`. The multiplication process is controlled by a start signal and is synchronous with the provided clock signal. The result is a 16-bit product, and the module also outputs a 7-segment display control.
@@ -65,6 +66,10 @@ Contributions to enhance the multiplier or extend its functionality are welcome.
 
 ## Notes
 1. Assert the reset_a signal before starting the multiplication to reset the module.
-
 2. The done_flag output indicates the completion of the multiplication process.
 
+## Acknowledgments
+
+This Sequential Multiplier project was developed through the collaborative efforts of a dedicated team.
+
+the hard work and dedication have been instrumental in the development of this Verilog implementation. We look forward to future collaborations and continued success.
