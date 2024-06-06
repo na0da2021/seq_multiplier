@@ -1,4 +1,4 @@
-# Sequential Multiplier Module
+# Sequential Multiplier
 
 ## Table of Contents
 - Overview
